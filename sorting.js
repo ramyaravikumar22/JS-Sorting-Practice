@@ -133,10 +133,14 @@ const strNums = ["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2"
   ]
 
   //using a higher order function, create an array of the unique 'weather_state_name' values of the weather array. Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-  const weatherStates = 
-  //console.log(weatherStates)
+  const weatherStates = weather.map(function(element) {
+    return element.weather_state_name
+    });
+  console.log(weatherStates)
 
   //find the id of the object in weather that has a min_temp of 15.915
 
-  const idealTemp =
+  const idealTemp = weather.filter(function (element) {
+    return element.min_temp === 15.915
+    })
   console.log(idealTemp)
