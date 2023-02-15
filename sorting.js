@@ -30,40 +30,20 @@ const strNums = ["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2"
   // Given 1000 digits of PI as strings, return an array of the digits as numbers
   const stringsToNumbs = (numbers) => {
     return numbers.map(Number)
-    //const num = parseInt(stringsToNumbs)
   }
-  //console.log(stringsToNumbs(strNums))
+  console.log(stringsToNumbs(strNums))
 
   // With the same numbers, find the sum of the even values
-  /*const sumEvens = (numStr) => {
-        let sum = 0;
-        for (let i = 0; i < Number(numStr.length); i++) {
-          if (i % 2 === 0){ 
-          sum = sum + Number(numStr[i]);
-          }
-        }
-        return sum;
-      }
-       
-      console.log(sumEvens(strNums));*/
-
   const sumEvens = strNums.filter(i => i % 2 === 0)
   const numberEvens = stringsToNumbs(sumEvens)
-  const reduced = numberEvens.reduce((a, b) => a + b)
-  console.log(reduced)
+  const reduced = numberEvens.reduce((a, b) => a + b) ///finding the sum of even numbers
+  console.log(reduced) 
   
-
-  // Find the index of the first value when added to it's index = 512 (#ATX!!)
-  const atxIdx = (numbers) => {
-    for (let i = 0; i < strNums.length; i++) {
-    if (strNums[i] + i === 512) {
-       console.log(`The index of the first value when added to it's index = 512 is ${i}`);
-       break;
-    }
- }
-  };
+  // Find the index of the first value when added to it's index = 512 (#ATX!!) **Skip this part**
+  //const atxIdx;
 
   //console.log(`index: ${atxIdx}, value: ${nums[atxIdx]}`);
+
 
   const weather = [
     { id: 5743823523151872,
@@ -133,14 +113,17 @@ const strNums = ["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2"
   ]
 
   //using a higher order function, create an array of the unique 'weather_state_name' values of the weather array. Your function should return the following array ['Light Cloud', 'Heavy Cloud', 'Showers']
-  const weatherStates = weather.map(function(element) {
-    return element.weather_state_name
-    });
-  console.log(weatherStates)
+    const weatherStates = [];
+    weather.forEach(function(element){
+    weatherStates.push(element.weather_state_name)
+ });
+   
+ console.log(weatherStates)
 
   //find the id of the object in weather that has a min_temp of 15.915
 
-  const idealTemp = weather.filter(function (element) {
-    return element.min_temp === 15.915
+   const idealTemp = weather.find(function(element) {
+    return element.min_temp == 15.915
     })
+
   console.log(idealTemp)
